@@ -8,7 +8,7 @@ def main():
     page_bg_img = f"""
     <style>
     .main {{
-        background-image: url("https://wordpress-network.prod.aws.skyscnr.com/wp-content/uploads/2018/05/GettyImages-187548771.jpg");
+        background-image: url("https://avatars.dzeninfra.ru/get-zen_doc/1718877/pub_61cacc9bd1e72b6a321017e8_62335a98f781ab27c5f97f55/scale_1200");
         background-size: cover;
     }}
     .main::before {{
@@ -107,7 +107,7 @@ def home_page():
     st.title("Классификация достопримечательностей")
     st.markdown(custom_css, unsafe_allow_html=True)
     st.markdown("<hr class='underline'>", unsafe_allow_html=True)
-    st.markdown("<p class='subtitle'>Мы определяем название мировых<br>достопримечательностей с помощью нейросети</p>", unsafe_allow_html=True)
+    st.markdown("<p class='subtitle'>Мы определяем название достопримечательностей Москвы<br> с помощью нейросети</p>", unsafe_allow_html=True)
     st.markdown("<p class='subtitle2'>Вы можете загрузить свою фотографию и узнать название достопримечательности</p>", unsafe_allow_html=True)
     
     # Создание кнопки "Попробовать" с использованием пользовательского CSS
