@@ -29,7 +29,7 @@ def run_classification(image):
     image: PIL.Image, изображение для классификации
     """
     # загружаем модель
-    pipe = pipeline("image-classification", model="mmgyorke/vit-world-landmarks")
+    pipe = pipeline("image-classification", model="Poliandr/moscow-attractions")
     # находим максимальный результат предсказания
     result = max(pipe(image), key=lambda x: x['score'])
     # выводим результаты предсказания в приложении
