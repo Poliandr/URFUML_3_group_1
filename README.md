@@ -1,7 +1,8 @@
 # URFUML_3_group_1
 1. Проект направлен на создание веб-приложения, которое позволяет определить достопримечательность по фотографии
 
-##Инструкция по локальной установке
+##Инструкция по локальной установке  
+
 git clone git@github.com:Poliandr/URFUML_3_group_1.git  
 cd URFUML_3_group_1  
 pip install -r requirements.txt  
