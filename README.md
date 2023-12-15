@@ -2,6 +2,10 @@
 1. Проект направлен на создание веб-приложения, которое позволяет определить достопримечательность по фотографии
 
 ##Инструкция по локальной установке
+streamlit run main.py git@github.com:Poliandr/URFUML_3_group_1.git
+cd URFUML_3_group_1
+pip install -r requirements.txt
+streamlit run main.py
 
 ##Использование
 1. Примеры использования перечислены в use-cases.txt
