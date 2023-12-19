@@ -184,7 +184,7 @@ def run_classification(image):
     # находим максимальный результат предсказания
     result = max(pipe(image), key=lambda x: x['score'])
     # выводим результаты предсказания в приложении
-    st.title(result['label'])
-
+    # st.title(result['label'])
+    st.markdown(f"<h1 style='text-align: center; margin: 0 auto;'>{result['label']}</h1>", unsafe_allow_html=True)
 if __name__ == "__main__":
     main()
