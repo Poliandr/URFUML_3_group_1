@@ -79,17 +79,19 @@ def home_page():
         font-size: 50px;
         text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
         white-space: nowrap;
-        margin-left: -15%;
+        text-align: center;
+        margin-left: -4%;
     }
     .underline {
         border: 1px solid white;
         margin-top: -30px;  /* Отрицательное значение отступа для приближения к заголовку */
+      
     }
     .subtitle {
         color: rgba(255, 255, 255, 0.7);
         font-size: 30px;
         text-align: center;
-        margin-top: -10px;
+       
         line-height: 1.2;
         font-weight: bold;
     }
@@ -100,22 +102,22 @@ def home_page():
         text-align: center;
         margin-top: 20px;
         white-space: nowrap;
-        margin-left: -25%;
+        margin-left: -18%;
     }
     </style>
     """
 
-    st.title("Классификация достопримечательностей")
+    st.title("Classification of tourist attractions")
     st.markdown(custom_css, unsafe_allow_html=True)
     st.markdown("<hr class='underline'>", unsafe_allow_html=True)
-    st.markdown("<p class='subtitle'>Мы определяем название достопримечательностей Москвы<br> с помощью нейросети</p>", unsafe_allow_html=True)
-    st.markdown("<p class='subtitle2'>Вы можете загрузить свою фотографию и узнать название достопримечательности</p>", unsafe_allow_html=True)
+    st.markdown("<p class='subtitle'>You have an ability to upload your photo <br> and find out the name of the tourist attraction<br> using a neural network</p>", unsafe_allow_html=True)
+    st.markdown("<p class='subtitle2'>You can upload your photo and find out the name of the tourist attraction</p>", unsafe_allow_html=True)
     
     # Создание кнопки "Попробовать" с использованием пользовательского CSS
-    StyleButton('Попробовать', width='250px', height='70px', margin_top='200px')
+    StyleButton('Test', width='250px', height='70px', margin_top='200px')
     
     # Обработка события нажатия на кнопку
-    if st.button("Попробовать", key="home_button"):
+    if st.button("Test", key="home_button"):
         st.session_state["current_page"] = "second"
         st.experimental_rerun()
 
@@ -128,7 +130,8 @@ def second_page():
         font-size: 50px;
         text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
         white-space: nowrap;
-        margin-left: -15%;
+        text-align: center;
+        margin-left: -4%;
     }
     .underline {
         border: 1px solid white;
@@ -144,7 +147,7 @@ def second_page():
     }
     </style>
     """
-    st.title("Классификация достопримечательностей")
+    st.title("Classification of tourist attractions")
     st.markdown(custom_css, unsafe_allow_html=True)
     st.markdown("<hr class='underline'>", unsafe_allow_html=True)
     
@@ -158,12 +161,12 @@ def second_page():
         image = Image.open(BytesIO(uploaded_file.read()))
 
     # Создание кнопки "Распознать" с использованием пользовательского CSS
-    StyleButton('Распознать', width='250px', height='60px', margin_top='50px')
+    StyleButton('Detect', width='250px', height='60px', margin_top='50px')
   
     # Обработка события нажатия на кнопку
-    if st.button("Распознать", key="recognition_button"):
+    if st.button("Detect", key="recognition_button"):
         # Вывод результата
-        st.markdown("<p class='subtitle3'>Распознанная достопримечательность:</p>", 
+        st.markdown("<p class='subtitle3'>Detected tourist attraction:</p>", 
                     unsafe_allow_html=True)
         # используем модель для классификации изображения
         run_classification(image)
