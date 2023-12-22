@@ -1,10 +1,11 @@
-from fastapi.testclient import TestClient
-from main import app
+from PIL import Image
+from main import run_classification
 
-client = TestClient(app)
+def test_run_classification():
+    # загрузка тестового изображения
+    image = Image.open("test_image.jpg")
 
+    # вызов функции run_classification
+    run_classification(image)
 
-def test_read_main():
-    response = client.get("/")
-    assert response.status_code == 200
-    assert response.json() == {"message": "Hello World"}
+test_run_classification()
