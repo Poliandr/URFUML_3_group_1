@@ -4,6 +4,7 @@ from transformers import pipeline
 from io import BytesIO
 from PIL import Image
 
+
 def main():
     overlay_opacity = 0.5
 
