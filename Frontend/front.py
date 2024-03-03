@@ -36,7 +36,7 @@ def main():
         second_page()
 
 
-def StyleButton(widget_label, font_color='white', background_color='transparent',width='200px', 
+def StyleButton(widget_label, font_color='white', background_color='transparent', width='200px',
                 height='60px', margin_top='10px'):
     """
     Функция для стилизации кнопки с использованием пользовательского CSS.
