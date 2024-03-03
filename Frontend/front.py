@@ -36,7 +36,7 @@ def main():
         second_page()
 
 
-def StyleButton(widget_label, font_color='white', background_color='transparent',width='200px',
+def StyleButton(widget_label, font_color='white', background_color='transparent',width='200px', 
                 height='60px', margin_top='10px'):
     """
     Функция для стилизации кнопки с использованием пользовательского CSS.
@@ -112,10 +112,11 @@ def home_page():
     st.title("Classification of tourist attractions")
     st.markdown(custom_css, unsafe_allow_html=True)
     st.markdown("<hr class='underline'>", unsafe_allow_html=True)
-    st.markdown("<p class='subtitle'>You have an ability to upload your photo <br> and find out the name of the tourist attraction<br> using a neural network</p>",
-        unsafe_allow_html=True)
+    st.markdown("<p class='subtitle'>You have an ability to upload your photo <br> \
+                and find out the name of the tourist attraction<br> using a neural network</p>",
+                unsafe_allow_html=True)
     st.markdown("<p class='subtitle2'>You can upload your photo and find out the name of the tourist attraction</p>",
-        unsafe_allow_html=True)
+                unsafe_allow_html=True)
 
     # Создание кнопки "Попробовать" с использованием пользовательского CSS
     StyleButton('Test', width='250px', height='70px', margin_top='200px')
@@ -155,7 +156,7 @@ def second_page():
     st.title("Classification of tourist attractions")
     st.markdown(custom_css, unsafe_allow_html=True)
     st.markdown("<hr class='underline'>", unsafe_allow_html=True)
-    
+
     # Загрузка фото
     uploaded_file = st.file_uploader('', type=['jpg', 'jpeg', 'png'])
 
