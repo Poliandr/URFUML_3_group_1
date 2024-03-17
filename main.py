@@ -41,8 +41,7 @@ def main():
 
 
 def StyleButton(widget_label, font_color='white', background_color='transparent',
-                width='200px', height='60px', margin_top='10px'):
-                    
+                width='200px', height='60px', margin_top='10px'):             
     """
     Функция для стилизации кнопки с использованием пользовательского CSS.
 
@@ -161,12 +160,10 @@ def second_page():
     st.markdown(custom_css, unsafe_allow_html=True)
     st.markdown("<hr class='underline'>", unsafe_allow_html=True)
 
-    
-    # Загрузка фото
+    #Загрузка фото
     uploaded_file = st.file_uploader('', type=['jpg', 'jpeg', 'png'])
-
     
-    # Отображение фото
+    #Отображение фото
     if uploaded_file is not None:
         st.image(uploaded_file, caption='', use_column_width=True)
         # используем PIL для открытия изображения из байтов
@@ -194,15 +191,11 @@ def run_classification(image):
     
     # Загружаем модель
     pipe = pipeline("image-classification", model="Poliandr/moscow-attractions")
-    
     # Находим максимальный результат предсказания
     result = max(pipe(image), key=lambda x: x['score'])
-    
     # Выводим результаты предсказания в приложении
     # st.title(result['label'])
-    
     st.markdown(f"<h1 style='text-align: center; margin: 0 auto;'>{result['label']}</h1>", unsafe_allow_html=True)
-
 
 if __name__ == "__main__":
     main()
