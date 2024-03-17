@@ -122,9 +122,10 @@ def home_page():
     st.markdown("<p class='subtitle2'>You can upload your photo and find out the name of the tourist attraction</p>",
                 unsafe_allow_html=True)
 
-
+    # Создание кнопки "Попробовать" с использованием пользовательского CSS
     StyleButton('Test', width='250px', height='70px', margin_top='200px')
 
+    # Обработка события нажатия на кнопку
     if st.button("Test", key="home_button"):
         st.session_state["current_page"] = "second"
         st.experimental_rerun()
@@ -179,7 +180,7 @@ def second_page():
         # Вывод результата
         st.markdown("<p class='subtitle3'>Detected tourist attraction:</p>",
                     unsafe_allow_html=True)
-        # используем модель для классификации изображения
+        # Используем модель для классификации изображения
         run_classification(image)
 
 
@@ -191,13 +192,13 @@ def run_classification(image):
     image: PIL.Image, изображение для классификации
     """
     
-    # загружаем модель
+    # Загружаем модель
     pipe = pipeline("image-classification", model="Poliandr/moscow-attractions")
     
-    # находим максимальный результат предсказания
+    # Находим максимальный результат предсказания
     result = max(pipe(image), key=lambda x: x['score'])
     
-    # выводим результаты предсказания в приложении
+    # Выводим результаты предсказания в приложении
     # st.title(result['label'])
     
     st.markdown(f"<h1 style='text-align: center; margin: 0 auto;'>{result['label']}</h1>", unsafe_allow_html=True)
