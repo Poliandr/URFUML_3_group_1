@@ -5,14 +5,18 @@ from io import BytesIO
 from PIL import Image
 import requests
 
+
 class Item(BaseModel):
     url: str
 
+
 app = FastAPI()
+
 
 @app.get("/")
 def root():
     return {"message": "Hello World"}
+
 
 @app.post("/predict/")
 def predict(item: Item):
