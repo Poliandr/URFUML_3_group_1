@@ -79,7 +79,7 @@ def home_page():
     h1 {
         color: white;
         font-size: 50px;
-        text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
+        text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8);
         white-space: nowrap;
         text-align: center;
         margin-left: -4%;
