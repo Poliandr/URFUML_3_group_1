@@ -188,8 +188,8 @@ def run_classification(image):
     image: PIL.Image, изображение для классификации
     """
     # загружаем модель
-    model_pipeline = pipeline("image-classification",
-                    model="Poliandr/moscow-attractions")
+    model_pipeline = pipeline(
+        "image-classification", model="Poliandr/moscow-attractions")
     # находим максимальный результат предсказания
     result_prediction = max(model_pipeline(image), key=lambda x: x['score'])
     # выводим результаты предсказания в приложении
