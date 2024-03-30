@@ -1,15 +1,40 @@
 # URFUML_3_group_1
 Проект направлен на создание веб-приложения, которое позволяет определить достопримечательность по фотографии.
 
+**Использование**  
+Работает на CPU на системе под управлением Linux, примеры использования перечислены в use-cases.txt
+
 **Инструкция по локальной установке**
 
 git clone git@github.com:Poliandr/URFUML_3_group_1.git  
 cd URFUML_3_group_1  
 pip install -r requirements.txt  
-streamlit run main.py  
 
-**Использование**  
-Работает на CPU на системе под управлением Linux, примеры использования перечислены в use-cases.txt
+***Запуск приложения***
+
+streamlit run main.py
+
+***Запуск API***
+
+uvicorn api:app
+
+***Запуск теста***
+
+pytest
+
+автотест Continuous Integration осуществляет GitHub Actions 
+
+***Использование API приложения***
+
+Посредстом curl передать http://127.0.0.1:8000/predict/ POST-запрос, формата json {"url": "ссылка_на_картинку"}.  
+URL картинок соответсвующей тематики можно взять из описания модели: https://huggingface.co/Poliandr/moscow-attractions  
+Пример передаваемого на сервер запроса:  
+curl -X 'POST' \
+  'http://127.0.0.1:8000/predict/' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "url": "https://huggingface.co/Poliandr/moscow-attractions/resolve/main/images/Grand_Kremlin_Palace.jpg"
+}'
 
 ## Оценка рисков для приложения "Классификация достопримечательностей"
 
