@@ -188,14 +188,14 @@ def run_classification(image):
     image: PIL.Image, изображение для классификации
     """
     # загружаем модель
-    pipe = pipeline("image-classification",
-                    model="Poliandr/moscow-attractions")
+    model_pipeline = pipeline(
+        "image-classification", model="Poliandr/moscow-attractions")
     # находим максимальный результат предсказания
-    result = max(pipe(image), key=lambda x: x['score'])
+    result_prediction = max(model_pipeline(image), key=lambda x: x['score'])
     # выводим результаты предсказания в приложении
     # st.title(result['label'])
     st.markdown(f"<h1 style='text-align: center;\
-                margin: 0 auto;'>{result['label']}</h1>",
+                margin: 0 auto;'>{result_prediction['label']}</h1>",
                 unsafe_allow_html=True)
 
 
